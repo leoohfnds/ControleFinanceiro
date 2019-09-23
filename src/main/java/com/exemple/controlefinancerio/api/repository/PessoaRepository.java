@@ -6,4 +6,12 @@ import com.exemple.controlefinancerio.api.model.Pessoa;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
+
+
+	
+
+
+
+	
+
 }
