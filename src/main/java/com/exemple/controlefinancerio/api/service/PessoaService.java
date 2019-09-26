@@ -33,7 +33,7 @@ public class PessoaService {
 		pessoaRepository.save(pessoaCon);
 	}
 
-	private Optional<Pessoa> buscarPessoaPeloCodigo(Long codigo) {
+	public Optional<Pessoa> buscarPessoaPeloCodigo(Long codigo) {
 		Optional<Pessoa> pessoaSalva = pessoaRepository.findById(codigo);
 
 		if (pessoaSalva.isPresent() == false) {
