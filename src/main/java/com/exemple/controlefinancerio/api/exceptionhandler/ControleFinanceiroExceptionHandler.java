@@ -37,7 +37,7 @@ public class ControleFinanceiroExceptionHandler extends ResponseEntityExceptionH
 		return handleExceptionInternal(ex, erros, headers, HttpStatus.BAD_REQUEST, request);
 	}
 
-	@ExceptionHandler(EmptyResultDataAccessException.class)
+	@ExceptionHandler({EmptyResultDataAccessException.class})
 	public ResponseEntity<Object> handlerEmptyResultDataAccessException(EmptyResultDataAccessException ex,
 			HttpHeaders headers, WebRequest request,HttpStatus status ) {
 		String mensagemUsuario = messageSource.getMessage("recurso.nao-encontrado", null, LocaleContextHolder.getLocale());
