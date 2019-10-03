@@ -52,7 +52,7 @@ public class CategoriaResource {
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
 	}
 
-	@GetMapping("{/codigo}")
+	@GetMapping("/{codigo}")
 	public Optional<Categoria> buscarPorCodigo(@PathVariable Long codigo) {
 
 		return categoriaService.buscarPorCodigo(codigo);
