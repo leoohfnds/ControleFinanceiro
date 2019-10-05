@@ -36,7 +36,8 @@ public class CategoriaService {
 		
 		Optional<Categoria> categorias = categoriaRepository.findById(codigo);
 		
-		if (categorias.isPresent() == false) {
+		if (!categorias.isPresent()) {
+		
 			throw new EmptyResultDataAccessException(1);
 		}
 		
