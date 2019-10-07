@@ -6,7 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -84,6 +87,13 @@ public class Pessoa {
 		this.ativo = ativo;
 	}
 
+	
+	@JsonIgnore // para o jackson nao criar nada
+	@Transient // hibernate nao cria tbm
+	public boolean IsInativo() {  //essa é uma função apenas para validar se o usuario é ativo
+		
+		return !this.ativo;	
+	}
 	
 	
 	
